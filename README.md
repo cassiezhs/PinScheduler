@@ -2,6 +2,8 @@
 
 A simple folder-based Pinterest auto-publishing MVP.
 
+[Privacy Policy](./PRIVACY_POLICY.md)
+
 ## What it does
 
 This project reads post folders from `content_queue/`, loads each folder's `metadata.yaml`, publishes eligible posts to Pinterest API v5, and then moves the post folder to `posted/` or `failed/`.
