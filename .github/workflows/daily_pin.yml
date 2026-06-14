@@ -1,0 +1,44 @@
+name: Daily Pin Publisher
+
+on:
+  schedule:
+    - cron: '0 9 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-pin-publisher
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
+      MAX_PINS_PER_RUN: ${{ secrets.MAX_PINS_PER_RUN }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run publisher
+        run: python -m src.publisher
+
+      - name: Persist queue and log changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- content_queue posted failed logs
+          git diff --cached --quiet || git commit -m "chore: persist Pinterest publishing results"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

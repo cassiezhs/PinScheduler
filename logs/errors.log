@@ -1,0 +1,21 @@
+2026-06-13 20:34:45,287 INFO publisher: Skipping sample-post because scheduled_date is in the future
+2026-06-13 20:34:55,931 ERROR publisher: Failed to publish sample-post
+Traceback (most recent call last):
+  File "/Users/zihanshao/Desktop/study/PinScheduler/PinScheduler/src/pinterest_client.py", line 43, in create_pin
+    response.raise_for_status()
+  File "/Users/zihanshao/Library/Python/3.11/lib/python/site-packages/requests/models.py", line 1167, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://api.pinterest.com/v5/pins
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/zihanshao/Desktop/study/PinScheduler/PinScheduler/src/publisher.py", line 87, in main
+    publish_post(folder)
+  File "/Users/zihanshao/Desktop/study/PinScheduler/PinScheduler/src/publisher.py", line 59, in publish_post
+    pin = create_pin(board_id, image_url, title, description, link, alt_text)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zihanshao/Desktop/study/PinScheduler/PinScheduler/src/pinterest_client.py", line 45, in create_pin
+    raise RuntimeError(
+RuntimeError: Pinterest API request failed: HTTP 401 - {"code":2,"message":"Authentication failed.","status":"failure"}
+2026-06-13T20:34:55.934640 - sample-post: Pinterest API request failed: HTTP 401 - {"code":2,"message":"Authentication failed.","status":"failure"}
