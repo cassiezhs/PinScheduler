@@ -19,3 +19,14 @@ Traceback (most recent call last):
     raise RuntimeError(
 RuntimeError: Pinterest API request failed: HTTP 401 - {"code":2,"message":"Authentication failed.","status":"failure"}
 2026-06-13T20:34:55.934640 - sample-post: Pinterest API request failed: HTTP 401 - {"code":2,"message":"Authentication failed.","status":"failure"}
+2026-06-14 11:31:07,357 ERROR publisher: Failed to publish sample-post
+Traceback (most recent call last):
+  File "/home/runner/work/PinScheduler/PinScheduler/src/publisher.py", line 112, in main
+    if publish_post(folder):
+       ^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/PinScheduler/PinScheduler/src/publisher.py", line 82, in publish_post
+    pin = create_pin(board_id, image_url, title, description, link, alt_text)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/PinScheduler/PinScheduler/src/pinterest_client.py", line 24, in create_pin
+    raise ValueError("PINTEREST_ACCESS_TOKEN is not set in the environment.")
+ValueError: PINTEREST_ACCESS_TOKEN is not set in the environment.
