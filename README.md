@@ -1,4 +1,4 @@
-# pinflow-automation
+# PinScheduler
 
 A simple folder-based Pinterest auto-publishing MVP.
 

@@ -4,11 +4,11 @@ Last updated: June 14, 2026
 
 ## Overview
 
-Pinflow Automation is a folder-based tool that publishes prepared content to Pinterest. This privacy policy explains what information the application processes and how that information is handled.
+PinScheduler is a folder-based tool that publishes prepared content to Pinterest. This privacy policy explains what information the application processes and how that information is handled.
 
 ## Information Processed
 
-Pinflow Automation may process:
+PinScheduler may process:
 
 - Pinterest access tokens provided through environment variables or GitHub repository secrets
 - Post metadata, including titles, descriptions, links, alt text, board IDs, image URLs, schedules, and status values
@@ -33,7 +33,7 @@ Post metadata and operational logs are stored locally in the project folders or 
 
 ## Third-Party Services
 
-Pinflow Automation sends publishing requests and post information to Pinterest through Pinterest API v5. Pinterest processes this information according to its own privacy policy and developer terms.
+PinScheduler sends publishing requests and post information to Pinterest through Pinterest API v5. Pinterest processes this information according to its own privacy policy and developer terms.
 
 Image URLs and destination links may be hosted by third parties. Those services may collect information according to their own privacy policies.
 
@@ -43,11 +43,11 @@ Published post folders and publishing logs are retained until the repository own
 
 ## Data Sharing
 
-Pinflow Automation does not sell personal information. Information is shared only with services required to publish content, such as Pinterest and any third-party image or link hosting providers selected by the repository owner.
+PinScheduler does not sell personal information. Information is shared only with services required to publish content, such as Pinterest and any third-party image or link hosting providers selected by the repository owner.
 
 ## Children's Privacy
 
-Pinflow Automation is not designed to collect personal information from children.
+PinScheduler is not designed to collect personal information from children.
 
 ## Changes to This Policy
 
